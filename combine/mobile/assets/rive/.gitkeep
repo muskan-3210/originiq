@@ -1,2 +1,0 @@
-Place crystal_ball.riv here (referenced by lib/screens/splash_screen.dart).
-Until it's supplied, the splash screen falls back to a hand-rolled glowing-circle animation.

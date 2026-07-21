@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Named to avoid colliding with Tailwind's built-in scale tokens
+     (e.g. a color literally named "base" would fight the text-base
+     font-size utility). */
+  --color-void: #0d0b1a;
+  --color-surface: #17142b;
+  --color-surface-raised: #201c3b;
+
+  --color-gold: #ffc857;
+  --color-danger: #e24b4a;
+  --color-teal: #1d9e75;
+  --color-amber: #ef9f27;
+
+  --color-ink: #f5f3ff;
+  --color-ink-dim: #a9a3c9;
+  --color-ink-faint: #6e698f;
+
+  --color-line: #2a2650;
+  --color-line-strong: #3d386b;
+
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --radius-pill: 999px;
+
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+::selection {
+  background-color: #ffc857;
+  color: #0d0b1a;
+}
+
+:focus-visible {
+  outline: 2px solid #ffc857;
+  outline-offset: 2px;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
