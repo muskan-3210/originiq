@@ -1,0 +1,56 @@
+# Render blueprint for the ORACLE backend (§17.1).
+# Provisions the FastAPI web service, a managed Postgres (with pgvector), and Redis.
+services:
+  - type: web
+    name: oracle-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: starter
+    healthCheckPath: /health
+    # Run migrations + seed once per deploy, before traffic is routed.
+    preDeployCommand: "alembic upgrade head && python scripts/seed_database.py"
+    autoDeploy: true
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: REPOSITORY_BACKEND
+        value: postgres
+      - key: CACHE_BACKEND
+        value: redis
+      - key: NLP_EMBEDDER
+        value: sentence-transformers
+      - key: DATABASE_URL
+        fromDatabase:
+          name: oracle-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          name: oracle-redis
+          type: redis
+          property: connectionString
+      # Secrets are set in the Render dashboard, not committed here:
+      - key: FIREBASE_ADMIN_CREDENTIALS_JSON
+        sync: false
+      - key: FIREBASE_STORAGE_BUCKET
+        sync: false
+      - key: CLAIMBUSTER_API_KEY
+        sync: false
+      - key: GOOGLE_FACTCHECK_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: PUBLIC_BASE_URL
+        sync: false
+
+  - type: redis
+    name: oracle-redis
+    plan: starter
+    ipAllowList: []          # only reachable from Render services
+    maxmemoryPolicy: allkeys-lru
+
+databases:
+  - name: oracle-db
+    plan: starter
+    postgresMajorVersion: "16"
+    # Enable pgvector via the initial Alembic migration (CREATE EXTENSION vector).

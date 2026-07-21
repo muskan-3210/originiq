@@ -1,0 +1,52 @@
+# ORACLE backend — production dependencies (target: Python 3.11)
+#
+# The backend runs in two modes:
+#   • "lite"  — zero-infra local/demo mode (in-memory KB + cache + hashing embedder).
+#               Only the top "Core" block below is strictly required. See requirements-lite.txt.
+#   • "full"  — production (Postgres/pgvector, Redis, sentence-transformers, external fact-check APIs).
+#               Requires everything in this file.
+#
+# Heavy ML wheels (torch, spacy, transformers) target Python 3.11 on Linux (Render).
+
+# ── Core web framework ──
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+python-multipart==0.0.20
+
+# ── Database (knowledge base) ──
+SQLAlchemy==2.0.36
+alembic==1.14.0
+psycopg2-binary==2.9.10
+pgvector==0.3.6
+
+# ── Cache ──
+redis==5.2.1
+
+# ── Auth / storage ──
+firebase-admin==6.6.0
+
+# ── HTTP / scraping (content intake, fact-check APIs) ──
+httpx==0.28.1
+requests==2.32.3
+beautifulsoup4==4.12.3
+lxml==5.3.0
+
+# ── NLP pipeline ──
+langdetect==1.0.9
+sentence-transformers==3.3.1
+spacy==3.8.3
+# spaCy model installed separately in the Dockerfile:
+#   python -m spacy download en_core_web_lg
+transformers==4.48.0
+torch==2.5.1
+numpy==1.26.4
+
+# ── OCR (screenshot intake) ──
+pytesseract==0.3.13
+Pillow==11.1.0
+
+# ── Utilities ──
+tenacity==9.0.0        # retry wrapper for flaky external APIs
+python-json-logger==3.2.1

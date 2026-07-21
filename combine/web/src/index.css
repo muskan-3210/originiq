@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-base font-body font-normal text-textPrimary antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-medium leading-tight;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  code,
+  pre,
+  kbd {
+    @apply font-mono;
+  }
+
+  ::selection {
+    background-color: #ffc857;
+    color: #0d0b1a;
+  }
+
+  :focus-visible {
+    outline: 2px solid #ffc857;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* The design system's elevation model: a raised surface + a 0.5px hairline
+     border instead of drop shadows. */
+  .border-hairline {
+    border-width: 0.5px;
+  }
+}

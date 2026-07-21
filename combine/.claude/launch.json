@@ -1,0 +1,35 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "oracle-backend",
+      "runtimeExecutable": "D:/Landing pages UI/backend/.venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "-m", "uvicorn", "app.main:app",
+        "--host", "0.0.0.0", "--port", "8000",
+        "--app-dir", "D:/Landing pages UI/backend"
+      ],
+      "port": 8000
+    },
+    {
+      "name": "oracle-web",
+      "runtimeExecutable": "C:/PROGRA~1/nodejs/node.exe",
+      "runtimeArgs": [
+        "D:/Landing pages UI/web/node_modules/vite/bin/vite.js",
+        "D:/Landing pages UI/web"
+      ],
+      "port": 5173,
+      "autoPort": true
+    },
+    {
+      "name": "oracle-mobile-web",
+      "runtimeExecutable": "C:/Python313/python.exe",
+      "runtimeArgs": [
+        "-m", "http.server", "8091",
+        "--directory", "D:/Landing pages UI/mobile/build/web"
+      ],
+      "port": 8091,
+      "autoPort": true
+    }
+  ]
+}

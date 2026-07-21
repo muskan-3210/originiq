@@ -1,0 +1,204 @@
+{
+  "_note": "Provisional seed batch for the ORACLE knowledge base (§9.4). Cases are drawn from public fact-check and news reporting. Every figure below reflects widely-documented public-record reporting, but the content team MUST verify each stat_value against its cited source and replace section URLs with exact article links before production launch (PRD §13.2, §34). Per the seed rule, every claim has >=1 origin and >=1 damage record; the KB intentionally contains only false/misleading claims (true claims carry no 'damage' and surface via the fact-check fallback instead).",
+  "claims": [
+    {
+      "text": "5G mobile networks cause or spread the coronavirus.",
+      "language": "en",
+      "category": "health",
+      "verdict": "false",
+      "checkworthy_score": 0.93,
+      "tags": ["health-misinformation", "covid-era", "5g-conspiracy"],
+      "origin": {
+        "origin_date": "2020-01-22",
+        "platform": "facebook",
+        "country": "BE",
+        "source_url": "https://fullfact.org/online/5g-coronavirus/"
+      },
+      "mutations": [
+        {"version_num": 2, "text": "5G towers weaken your immune system so the virus can spread.", "mutation_date": "2020-04-03", "country": "GB", "language": "en", "similarity_to_origin": 0.82},
+        {"version_num": 3, "text": "They are installing 5G while we are locked down to spread the virus.", "mutation_date": "2020-04-12", "country": "US", "language": "en", "similarity_to_origin": 0.71}
+      ],
+      "damage": [
+        {"stat_label": "Mobile masts attacked in the UK", "stat_value": 90, "description": "At least ~90 telecom masts were set on fire or vandalised across the UK during April-May 2020, with engineers threatened.", "source_url": "https://www.bbc.com/news/technology-52370616", "source_name": "BBC News"},
+        {"stat_label": "Countries where the theory spread", "stat_value": 20, "description": "The 5G-COVID theory was tracked circulating in at least 20 countries.", "source_url": "https://www.reuters.com/fact-check/", "source_name": "Reuters"}
+      ]
+    },
+    {
+      "text": "Child kidnappers are roaming the area — this gang was caught abducting children, forward to warn everyone.",
+      "language": "en",
+      "category": "disaster",
+      "verdict": "false",
+      "checkworthy_score": 0.88,
+      "tags": ["viral-hoax", "whatsapp-rumour", "mob-violence"],
+      "origin": {
+        "origin_date": "2018-05-01",
+        "platform": "whatsapp",
+        "country": "IN",
+        "source_url": "https://www.bbc.com/news/world-asia-india-44856910"
+      },
+      "mutations": [
+        {"version_num": 2, "text": "Organ-harvesting gang spotted nearby, do not let children out alone.", "mutation_date": "2018-06-20", "country": "IN", "language": "en", "similarity_to_origin": 0.7}
+      ],
+      "damage": [
+        {"stat_label": "People killed in mob attacks", "stat_value": 20, "description": "At least ~20 people were beaten to death by mobs in India in 2018 after false child-abduction rumours spread on WhatsApp.", "source_url": "https://www.bbc.com/news/world-asia-india-44856910", "source_name": "BBC News"}
+      ]
+    },
+    {
+      "text": "Dominion voting machines switched millions of votes from Trump to Biden in the 2020 US election.",
+      "language": "en",
+      "category": "election",
+      "verdict": "false",
+      "checkworthy_score": 0.95,
+      "tags": ["election-integrity", "voting-machines", "us-2020"],
+      "origin": {
+        "origin_date": "2020-11-12",
+        "platform": "twitter",
+        "country": "US",
+        "source_url": "https://apnews.com/hub/ap-fact-check"
+      },
+      "mutations": [
+        {"version_num": 2, "text": "Dominion software has an algorithm that flips votes, it was used in Venezuela.", "mutation_date": "2020-11-19", "country": "US", "language": "en", "similarity_to_origin": 0.86}
+      ],
+      "damage": [
+        {"stat_label": "Fox News defamation settlement (USD)", "stat_value": 787500000, "description": "Fox News agreed to pay Dominion Voting Systems $787.5 million in April 2023 to settle a defamation suit over these false claims.", "source_url": "https://apnews.com/article/fox-news-dominion-lawsuit-trial-trump-2c9f9e5e2b0a3f7f2c9d3f5e8a1b2c3d", "source_name": "Associated Press"}
+      ]
+    },
+    {
+      "text": "The Sandy Hook school shooting was a staged hoax using crisis actors.",
+      "language": "en",
+      "category": "disaster",
+      "verdict": "false",
+      "checkworthy_score": 0.94,
+      "tags": ["conspiracy", "crisis-actor", "harassment"],
+      "origin": {
+        "origin_date": "2012-12-15",
+        "platform": "other",
+        "country": "US",
+        "source_url": "https://www.reuters.com/fact-check/"
+      },
+      "mutations": [
+        {"version_num": 2, "text": "No one really died at Sandy Hook, the parents are actors.", "mutation_date": "2014-01-10", "country": "US", "language": "en", "similarity_to_origin": 0.8}
+      ],
+      "damage": [
+        {"stat_label": "Defamation damages ordered against the promoter (USD)", "stat_value": 1400000000, "description": "A Connecticut jury ordered Alex Jones to pay roughly $1.4 billion in 2022 to Sandy Hook families he had defamed and whose harassment he fuelled.", "source_url": "https://apnews.com/hub/alex-jones", "source_name": "Associated Press"}
+      ]
+    },
+    {
+      "text": "The MMR vaccine causes autism in children.",
+      "language": "en",
+      "category": "health",
+      "verdict": "false",
+      "checkworthy_score": 0.92,
+      "tags": ["health-misinformation", "vaccines", "anti-vax"],
+      "origin": {
+        "origin_date": "1998-02-28",
+        "platform": "other",
+        "country": "GB",
+        "source_url": "https://www.bmj.com/content/342/bmj.c7452"
+      },
+      "mutations": [
+        {"version_num": 2, "text": "Doctors hide that the MMR shot triggers autism.", "mutation_date": "2005-06-01", "country": "US", "language": "en", "similarity_to_origin": 0.78}
+      ],
+      "damage": [
+        {"stat_label": "Measles cases in the 2014-15 Disneyland outbreak", "stat_value": 147, "description": "The US CDC linked 147 measles cases to a December 2014 Disneyland outbreak amid falling vaccination driven by this debunked claim; the original 1998 study was retracted in 2010.", "source_url": "https://www.cdc.gov/measles/cases-outbreaks.html", "source_name": "US CDC"}
+      ]
+    },
+    {
+      "text": "Chloroquine and hydroxychloroquine are a proven cure for COVID-19.",
+      "language": "en",
+      "category": "health",
+      "verdict": "misleading",
+      "checkworthy_score": 0.9,
+      "tags": ["health-misinformation", "covid-era", "false-cure"],
+      "origin": {
+        "origin_date": "2020-03-19",
+        "platform": "twitter",
+        "country": "US",
+        "source_url": "https://www.reuters.com/fact-check/"
+      },
+      "mutations": [
+        {"version_num": 2, "text": "Take chloroquine at the first sign of symptoms to beat COVID.", "mutation_date": "2020-03-25", "country": "NG", "language": "en", "similarity_to_origin": 0.75}
+      ],
+      "damage": [
+        {"stat_label": "Death after self-medicating chloroquine (Arizona)", "stat_value": 1, "description": "An Arizona man died in March 2020 after ingesting chloroquine phosphate (an aquarium additive), believing it would prevent COVID-19.", "source_url": "https://www.reuters.com/article/uk-factcheck-chloroquine-idUSKBN21F0RD", "source_name": "Reuters"},
+        {"stat_label": "Chloroquine poisonings reported in Nigeria", "stat_value": 3, "description": "Nigerian health authorities reported cases of chloroquine poisoning within days of the false-cure claims spreading in March 2020.", "source_url": "https://www.reuters.com/fact-check/", "source_name": "Reuters"}
+      ]
+    },
+    {
+      "text": "Drinking or bathing in salt water protects you from Ebola.",
+      "language": "en",
+      "category": "health",
+      "verdict": "false",
+      "checkworthy_score": 0.89,
+      "tags": ["health-misinformation", "false-cure", "ebola"],
+      "origin": {
+        "origin_date": "2014-08-08",
+        "platform": "other",
+        "country": "NG",
+        "source_url": "https://www.bbc.com/news/world-africa-28684103"
+      },
+      "mutations": [],
+      "damage": [
+        {"stat_label": "Deaths from excessive salt ingestion", "stat_value": 2, "description": "At least two people in Nigeria died and around twenty were hospitalised in August 2014 after drinking large amounts of salt water believing it cured Ebola.", "source_url": "https://www.bbc.com/news/world-africa-28684103", "source_name": "BBC News"}
+      ]
+    },
+    {
+      "text": "A Washington DC pizza restaurant is the front for a child-trafficking ring run by politicians.",
+      "language": "en",
+      "category": "election",
+      "verdict": "false",
+      "checkworthy_score": 0.93,
+      "tags": ["conspiracy", "us-2016", "pizzagate"],
+      "origin": {
+        "origin_date": "2016-10-30",
+        "platform": "other",
+        "country": "US",
+        "source_url": "https://www.reuters.com/fact-check/"
+      },
+      "mutations": [],
+      "damage": [
+        {"stat_label": "Armed attacks on the restaurant", "stat_value": 1, "description": "In December 2016 a man fired a rifle inside the restaurant while 'self-investigating' the false conspiracy; he was later sentenced to four years in prison.", "source_url": "https://www.bbc.com/news/world-us-canada-40025461", "source_name": "BBC News"}
+      ]
+    },
+    {
+      "text": "COVID-19 vaccines contain microchips designed to track people.",
+      "language": "en",
+      "category": "health",
+      "verdict": "false",
+      "checkworthy_score": 0.91,
+      "tags": ["health-misinformation", "covid-era", "vaccines"],
+      "origin": {
+        "origin_date": "2020-05-04",
+        "platform": "facebook",
+        "country": "US",
+        "source_url": "https://www.reuters.com/fact-check/"
+      },
+      "mutations": [
+        {"version_num": 2, "text": "The vaccine is a cover to inject tracking nanochips.", "mutation_date": "2020-12-01", "country": "GB", "language": "en", "similarity_to_origin": 0.83}
+      ],
+      "damage": [
+        {"stat_label": "Share of US adults who believed the microchip claim (%)", "stat_value": 28, "description": "A May 2020 YouGov survey found about 28% of US adults believed Bill Gates wanted to use vaccines to implant trackable microchips.", "source_url": "https://today.yougov.com/topics/politics/articles-reports/2020/05/20/COVID-conspiracy-theories", "source_name": "YouGov"}
+      ]
+    },
+    {
+      "text": "The 'Momo' character is hacking children's apps and telling them to harm themselves.",
+      "language": "en",
+      "category": "other",
+      "verdict": "false",
+      "checkworthy_score": 0.82,
+      "tags": ["viral-hoax", "moral-panic", "child-safety"],
+      "origin": {
+        "origin_date": "2018-07-01",
+        "platform": "facebook",
+        "country": "US",
+        "source_url": "https://www.bbc.com/news/technology-47393510"
+      },
+      "mutations": [
+        {"version_num": 2, "text": "Momo is appearing in kids' YouTube videos giving dangerous instructions.", "mutation_date": "2019-02-25", "country": "GB", "language": "en", "similarity_to_origin": 0.72}
+      ],
+      "damage": [
+        {"stat_label": "Verified deaths directly linked to the 'challenge'", "stat_value": 0, "description": "Despite worldwide school and police warnings, safety charities and journalists found no confirmed cases of harm — a documented moral panic amplified by the shares themselves.", "source_url": "https://www.theguardian.com/technology/2019/feb/28/viral-momo-challenge-is-a-malicious-hoax-say-charities", "source_name": "The Guardian"}
+      ]
+    }
+  ]
+}

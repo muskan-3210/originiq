@@ -1,0 +1,11 @@
+# ORACLE backend — development & test tooling.
+#   pip install -r requirements-lite.txt -r requirements-dev.txt
+
+pytest==8.3.4
+pytest-asyncio==0.25.2
+pytest-cov==6.0.0
+ruff==0.8.6
+mypy==1.14.1
+types-requests==2.32.0.20241016
+faker==33.1.0
+locust==2.32.5          # load testing (§16.6)

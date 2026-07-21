@@ -1,0 +1,24 @@
+# ORACLE backend — "lite" zero-infra dependencies.
+#
+# Installs ONLY what's needed to run the API locally with the in-memory knowledge
+# base, in-memory cache, and the deterministic hashing embedder — no Postgres,
+# no Redis, no torch/spacy, no external API keys required.
+#
+#   pip install -r requirements-lite.txt
+#   uvicorn app.main:app --reload
+#
+# Everything here installs cleanly on Python 3.11–3.13.
+
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+python-multipart==0.0.20
+httpx==0.28.1
+requests==2.32.3
+beautifulsoup4==4.12.3
+lxml==5.3.0
+langdetect==1.0.9
+numpy==1.26.4
+Pillow==11.1.0
+python-json-logger==3.2.1

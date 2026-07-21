@@ -1,0 +1,100 @@
+name: oracle
+description: "ORACLE — The Fake News Time Machine. Paste suspicious content and watch its forensic story unfold: where it was born, how it mutated, the damage it caused, and the truth that ends it."
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  # NOTE: this environment has no Flutter SDK and no live access to
+  # pub.dev, so every version below is a best-effort recollection rather
+  # than a confirmed-current release — the caret constraints (^) let `pub
+  # get` resolve forward within the same major version, but if any of
+  # these packages have since had a major version bump, that bump won't
+  # be picked up automatically. Run `flutter pub outdated` right after
+  # installing the Flutter SDK and bump anything that's fallen behind
+  # before relying on this scaffold.
+  flutter:
+    sdk: flutter
+
+  # Animation
+  # NOTE: ship assets/rive/crystal_ball.riv (see assets/rive/.gitkeep) for the
+  # splash screen crystal-ball animation. Until that file is supplied, splash
+  # falls back to a hand-rolled glowing-circle animation (see
+  # lib/screens/splash_screen.dart).
+  rive: ^0.13.13
+
+  # Firebase
+  firebase_core: ^2.31.0
+  firebase_auth: ^4.19.5
+  cloud_firestore: ^4.17.4
+  firebase_storage: ^11.7.6
+
+  # Sharing / networking
+  share_plus: ^9.0.0
+  http: ^1.2.1
+  cached_network_image: ^3.3.1
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Icons — Phosphor per the ORACLE design system (§8).
+  # NOTE: `phosphor_flutter` (2.1.0, its last release) subclasses `IconData`,
+  # which recent Flutter/Dart releases made a `final class` — it can't compile
+  # against modern Flutter at all. `phosphor_icons` is the actively-maintained
+  # successor (explicitly "Compatible with Flutter 3.43+"), same icon set,
+  # same PhosphorIcon(s) API.
+  phosphor_icons: ^3.0.1
+
+  cupertino_icons: ^1.0.6
+
+  # NOTE (langdetect-not-needed): language detection is deliberately NOT a
+  # client dependency — `POST /api/analyze` handles language detection
+  # server-side, so no langdetect-equivalent Dart package is included here.
+  #
+  # NOTE (image picking): the Home screen's photo-upload icon
+  # (`PasteInputCard`) needs a real image-picking package (e.g.
+  # `image_picker`) to read bytes from the OS photo picker for
+  # `ApiService.analyzeImage`. That dependency was intentionally left out of
+  # this scaffold's fixed dependency list — add it and wire
+  # `HomeScreen._handlePickPhoto` before shipping image input.
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Font files are NOT included in this scaffold yet. Flutter's asset bundler
+  # hard-fails at build time if a declared font file is missing, so the
+  # `fonts:` block stays commented out until real files exist — uncomment it
+  # once you've dropped the .ttf files into assets/fonts/ (see
+  # assets/fonts/.gitkeep for the exact filenames expected). Required
+  # families, per the ORACLE design system (§8), both free on Google Fonts:
+  #   - Space Grotesk, weights 400 and 500 (display / wordmark / headings /
+  #     stat numbers)
+  #   - Inter, weights 400 and 500 (body / captions)
+  # Only weights 400 and 500 are used anywhere in this app — never 700/bold.
+  # Until real files are added, text falls back to the platform default font.
+  #
+  # fonts:
+  #   - family: Space Grotesk
+  #     fonts:
+  #       - asset: assets/fonts/SpaceGrotesk-Regular.ttf
+  #         weight: 400
+  #       - asset: assets/fonts/SpaceGrotesk-Medium.ttf
+  #         weight: 500
+  #   - family: Inter
+  #     fonts:
+  #       - asset: assets/fonts/Inter-Regular.ttf
+  #         weight: 400
+  #       - asset: assets/fonts/Inter-Medium.ttf
+  #         weight: 500
+
+  assets:
+    - assets/rive/
